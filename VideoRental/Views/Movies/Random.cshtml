@@ -1,0 +1,17 @@
+﻿@model VideoRental.Models.Movie
+@{
+    ViewBag.Title = "Random";
+}
+
+<h2>@Model.Name</h2>
+<table class="table table-striped table-hover">
+	<tr> 
+		<th>Movie ID</th>
+		<td>@Model.Id</td>
+	</tr>
+	<tr>
+		<th>Rental Price</th>
+		<td class="">@Model.RentalPrice</td>
+	</tr>
+</table>
+
