@@ -32,5 +32,25 @@ namespace VideoRental.Controllers
         {
             return Content("id=" + id); 
         }
+
+        public ActionResult Index(int? pageIndex, string sortBy) // int? toont aan dat de parameter optioneel is. Hierdoor kan HasValue gebruikt worden op de parameter.
+        {
+            if (!pageIndex.HasValue)
+            {
+                pageIndex = 1;
+            }
+
+            if (String.IsNullOrWhiteSpace(sortBy))
+            {
+                sortBy = "name";
+            }
+
+            return Content(String.Format("pageIndex={0}&sortBy={1}", pageIndex, sortBy));
+        }
+
+        public ActionResult getMoviesByReleaseDate(int year, byte month)
+        {
+            return Content(year + "/" + month);
+        }
     }
 }
